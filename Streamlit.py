@@ -15,7 +15,7 @@ st.markdown('''Esse projeto foi desenvolvido como inspiração do livro "*Hands-
 
 st.markdown('---')
 
-house_db = pd.read_csv("C:\\Users\\marco\\OneDrive\\Documentos\\CIÊNCIA DE DADOS\\Projetos - Marco\\Projeto 3 - CALIFORNIA HOUSES\\housing.csv")
+house_db = pd.read_csv("housing.csv")
 
 st.subheader('EDA (*Exploratory Data Analysis*):')
 
@@ -75,7 +75,7 @@ RMSE: 41.05
 R²: 0.9906
 ```''')
 
-house_db_regressao = pd.read_csv("C:\\Users\\marco\\OneDrive\\Documentos\\CIÊNCIA DE DADOS\\Projetos - Marco\\Projeto 3 - CALIFORNIA HOUSES\\housing_regr.csv")
+house_db_regressao = pd.read_csv("housing_regr.csv")
 
 st.markdown('''Após o preenchimento dos valores ausentes, podemos prosseguir com a análise exploratória e a construção dos modelos de regressão.
 
