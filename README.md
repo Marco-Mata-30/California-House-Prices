@@ -65,6 +65,7 @@ pip install pandas numpy seaborn matplotlib plotly scikit-learn
 ## Resultado
 O modelo final de Regressão Random Forest MAE de 31.852,70 e R² igual a 0,8217.
 https://www.kaggle.com/code/marcomata/california-house-predict
+https://california-house-prices-mata.streamlit.app
 
 ## Autor
 
