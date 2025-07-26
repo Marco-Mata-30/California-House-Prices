@@ -176,7 +176,7 @@ Pode indicar poucas observações, pois o box é estreito e com poucos pontos.''
 
 st.markdown('''Por fim, iremos analisar a correlação entre as variáveis numéricas da base de dados.
 Para isso, iremos utilizar o mapa de calor (heatmap) do Seaborn. O mapa de calor nos permitirá visualizar a correlação entre as variáveis e identificar quais delas estão mais relacionadas com o valor mediano das casas.''')
-st.image('img/corr.png', caption='Gráfico gerado a partir de código Python', use_column_width=True)
+st.image('img/corr.png', caption='Gráfico gerado a partir de código Python', use_container_width=True)
 st.markdown('''A partir do mapa de calor, podemos observar que a variável da mediana salarial da região ('*median_income*') é a que possui a maior correlação positiva com o valor mediano das casas.''')
 st.markdown('---')
 st.subheader('MÃOS-À-OBRA - Prevendo o Valor Mediano das Casas')
@@ -215,7 +215,7 @@ Para reduzirmos o Overfitting, foi utilizado o parâmetro "max_depth" com valor 
 
 O seguinte gráfico faz uma comparação entre os valores reais e os valores previstos pelo modelo de Regressão Random Forest. O eixo X representa os valores reais, enquanto o eixo Y representa os valores previstos pelo modelo. A linha diagonal representa a linha de perfeição, onde os valores previstos seriam iguais aos valores reais. Quanto mais próximo os pontos estiverem dessa linha, melhor será o desempenho do modelo.''')
 
-st.image('img/Final.png', caption='Gráfico gerado a partir de código Python', use_column_width=True)
+st.image('img/Final.png', caption='Gráfico gerado a partir de código Python', use_container_width=True)
 
 st.markdown('''---''')
 st.subheader('Conclusão')
