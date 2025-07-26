@@ -81,9 +81,6 @@ st.markdown('''Após o preenchimento dos valores ausentes, podemos prosseguir co
 
 Nossa primeira análise será a montagem de um **mapa da Califórnia**, onde cada ponto representa uma casa, e a cor do ponto indica o valor mediano da casa, e o tamanho do ponto indica a população da área. Isso nos permitirá visualizar a distribuição dos preços das casas na região e identificar possíveis padrões geográficos.''')
 
-import streamlit as st
-import matplotlib.pyplot as plt
-
 # Criando a figura e o gráfico
 fig, ax = plt.subplots(figsize=(10, 7))
 scatter = ax.scatter(
@@ -109,9 +106,6 @@ st.markdown('''Seguindo para nossa próxima análise iremos montar **gráficos d
 Esses gráficos nos ajudarão a identificar correlações entre as variáveis e a entender melhor como elas se relacionam com o valor mediano das casas.
 Abaixo estão os gráficos de dispersão para as variáveis 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population': ''')
 
-import streamlit as st
-import plotly.express as px
-
 # Criando a matriz de dispersão com Plotly
 grafico = px.scatter_matrix(
     house_db_regressao,
@@ -129,10 +123,6 @@ st.markdown('''Uma análise importante a ser feita é a distribuição dos valor
 Para isso, iremos utilizar o **histograma** e o **boxplot**. O histograma nos permitirá visualizar a distribuição dos valores, enquanto o boxplot nos ajudará a identificar possíveis outliers e a dispersão dos dados.
 Abaixo estão os gráficos de histograma 'median_house_value': ''')
 
-import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 # Criando a figura
 fig, ax = plt.subplots()
 sns.histplot(house_db_regressao['median_house_value'], kde=True, ax=ax)
@@ -145,11 +135,6 @@ ax.set_ylabel('Frequência')
 # Exibindo no Streamlit
 st.pyplot(fig)
 st.text('''Note que ocorre uma concentração de valores em torno de $500.000,00. Isso acontece porque a variável "median_house_value" possui um valor máximo truncado em $500.000,00. Ou seja, imóveis com valores superiores foram limitados a esse teto, o que pode introduzir um viés nos modelos de regressão e limitar sua capacidade de prever valores muito altos com precisão.''')
-
-import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
-
 # Criando a figura
 fig, ax = plt.subplots(figsize=(10, 6))  # Tamanho opcional
 sns.boxplot(x='ocean_proximity', y='median_house_value', data=house_db_regressao, ax=ax)
@@ -191,7 +176,7 @@ Pode indicar poucas observações, pois o box é estreito e com poucos pontos.''
 
 st.markdown('''Por fim, iremos analisar a correlação entre as variáveis numéricas da base de dados.
 Para isso, iremos utilizar o mapa de calor (heatmap) do Seaborn. O mapa de calor nos permitirá visualizar a correlação entre as variáveis e identificar quais delas estão mais relacionadas com o valor mediano das casas.''')
-st.image('img/corr.png', caption='Matriz gerada a partir de código Python', width=700)
+st.image('img/corr.png', caption='Gráfico gerado a partir de código Python', use_column_width=True)
 st.markdown('''A partir do mapa de calor, podemos observar que a variável da mediana salarial da região ('*median_income*') é a que possui a maior correlação positiva com o valor mediano das casas.''')
 st.markdown('---')
 st.subheader('MÃOS-À-OBRA - Prevendo o Valor Mediano das Casas')
@@ -230,7 +215,7 @@ Para reduzirmos o Overfitting, foi utilizado o parâmetro "max_depth" com valor 
 
 O seguinte gráfico faz uma comparação entre os valores reais e os valores previstos pelo modelo de Regressão Random Forest. O eixo X representa os valores reais, enquanto o eixo Y representa os valores previstos pelo modelo. A linha diagonal representa a linha de perfeição, onde os valores previstos seriam iguais aos valores reais. Quanto mais próximo os pontos estiverem dessa linha, melhor será o desempenho do modelo.''')
 
-st.image('img/Final.png', caption='Gráfico gerado a partir de código Python', width=700)
+st.image('img/Final.png', caption='Gráfico gerado a partir de código Python', use_column_width=True)
 
 st.markdown('''---''')
 st.subheader('Conclusão')
